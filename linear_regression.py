@@ -1,4 +1,3 @@
-
 from sklearn.linear_model import LinearRegression
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import mean_squared_error
@@ -8,8 +7,16 @@ import numpy as np
 
 df = pd.read_csv('data/winequality-white.csv', header=0, sep=';')
 
-X = df[list(df.columns)[:-1]]
+# X = df[list(df.columns)[:-1]]
+X = df['alcohol'].reshape(-1,1)
 y = df['quality']
+
+plt.scatter(X,y)
+plt.xlabel('Alcohol')
+plt.ylabel('Quality') 
+plt.show()
+
+# print (X.head())
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
