@@ -7,7 +7,11 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('data/winequality-white.csv', header=0, sep=';')
 
 X = df[list(df.columns)[:-1]]
-y = df['quality']
+y = df.replace(df['quality'])
+# <5 - low
+# 5 - 6 - average
+# >6 - 
+
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
