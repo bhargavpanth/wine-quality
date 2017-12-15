@@ -3,6 +3,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.grid_search import GridSearchCV
 import pandas as pd
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('data/winequality-white.csv', header=0, sep=';')
 
